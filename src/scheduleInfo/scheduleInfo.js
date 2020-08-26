@@ -3,19 +3,17 @@ import React from "react";
 const styles = require("./ScheduleInfo.module.scss");
 
 export const ScheduleInfo = (props) => {
-    console.log(props.sprints);
     const renderUsers = () => {
         const allUsers = [];
 
         props.users.forEach((user, index) => {
             allUsers.push(
-                <div className={styles.developer}>
+                <div className={styles.developer} data-testid="dev">
                     {index + 1}. {user.name}
                 </div>
             );
         });
 
-        console.log(allUsers);
         return allUsers;
     };
 
