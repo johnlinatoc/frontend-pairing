@@ -15,8 +15,8 @@ export const SprintContainer = props => {
     }
 
     return(
-        <div className="sprint-container">
-            <h2>Pairs</h2>
+        <div className={styles.sprintContainer}>
+            <h2>Sprint Pairs</h2>
             {renderSprintCards(props.sprints)}
         </div>
     )
