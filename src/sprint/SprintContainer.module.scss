@@ -1,17 +1,28 @@
+@import "../scss/breakpoints.scss";
+
 .sprintContainer {
     display: flex;
     flex-direction: column;
     border: solid 1px black;
     margin: 2rem;
     padding: 1rem;
-    max-width: 31rem;
-    min-width: 19rem;
+    min-width: 20rem;
+    
+    @media (min-width: $tablet){
+        flex-direction: initial;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // :not(:first-child) {
+        //     background-color: #900;
+        // }
+    }
 
     h2 {
-        font-size: 1.5rem;
-        margin: 0.8rem 0 0 0;
+        font-size: 1.7rem;
+        margin: 0.8rem 0 0.8rem 0;
         padding-bottom: 1rem;
         text-align: center;
         border-bottom: 0.1rem solid lightgrey;
+        width: 100%;
     }
 }

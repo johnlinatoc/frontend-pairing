@@ -10,11 +10,11 @@ export const SprintCard = props => {
         groups.forEach((group, i) =>{
             if(group.length > 1){
                 pairs.push(<div className={styles.pair}>
-                    group {i+1}: {group[0]} & {group[1]}
+                    Group {i+1}: {group[0]} & {group[1]}
                 </div>)
             } else {
                 pairs.push(<div className={styles.solo}>
-                    solo: {group[0]}
+                    Solo: {group[0]}
                 </div>)
             }
         })

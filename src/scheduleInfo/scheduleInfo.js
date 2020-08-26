@@ -8,10 +8,14 @@ export const ScheduleInfo = (props) => {
         const allUsers = [];
 
         props.users.forEach((user, index) => {
-        allUsers.push(<div className={styles.developer}>{index + 1}. {user.name}</div>);
+            allUsers.push(
+                <div className={styles.developer}>
+                    {index + 1}. {user.name}
+                </div>
+            );
         });
 
-        console.log(allUsers)
+        console.log(allUsers);
         return allUsers;
     };
 
@@ -22,19 +26,21 @@ export const ScheduleInfo = (props) => {
     };
 
     return (
-        <div className={styles.container}>
-            <h2>Schedule Info</h2>
-            <div className={styles.sprintNumWrapper}>
-                <h3>Number of Sprints:</h3>
-                <div>{numOfSprints()} sprints</div>
-            </div>
-            <div className={styles.sprintNumWrapper}>
-                <h3>Sprint Duration:</h3>
-                <div>5 days (Mon-Fri)</div>
-            </div>
-            <div className={styles.developerContainer}>
-                <h3>Developers:</h3>
-                <div className={styles.developers}>{renderUsers()}</div>
+        <div className={styles.wrapper}>
+            <div className={styles.container}>
+                <h2>Schedule Info</h2>
+                <div className={styles.sprintNumWrapper}>
+                    <h3>Number of Sprints:</h3>
+                    <div>{numOfSprints()} sprints</div>
+                </div>
+                <div className={styles.sprintNumWrapper}>
+                    <h3>Sprint Duration:</h3>
+                    <div>5 days (Mon-Fri)</div>
+                </div>
+                <div className={styles.developerContainer}>
+                    <h3>Developers:</h3>
+                    <div className={styles.developers}>{renderUsers()}</div>
+                </div>
             </div>
         </div>
     );
