@@ -3,9 +3,9 @@ import { render, getAllByTestId, getByText, screen } from '@testing-library/reac
 import SprintContainer from "./SprintContainer.js";
 
 const mockSprints = {
-    "sprint 1": [["John, Paul"], ["Marcus"]],
-    "sprint 2": [["Paul, Marcus"], ["John"]],
-    "sprint 3": [["John, Marcus"], ["Marcus"]]
+    "sprint 1": [["John", "Paul"], ["Marcus"]],
+    "sprint 2": [["Paul", "Marcus"], ["John"]],
+    "sprint 3": [["John", "Marcus"], ["Marcus"]]
 }
 
 describe('The SprintContainer component', ()=> {
@@ -15,12 +15,10 @@ describe('The SprintContainer component', ()=> {
         expect(getByText('Sprint Pairs')).toBeInTheDOM();
     });
 
-    it('should have 2 sprints displayed when passed in 3 developers',  () => {
-        renderComponent();
-        screen.debug();
+    it('should have 3 sprints displayed when passed in 3 developers',  () => {
+        const {container} = renderComponent();
 
-
-        expect(getByText('3 sprints')).toBeInTheDOM();
+        expect(getAllByTestId(container, "group").length).toBe(3);
     })
 })
 

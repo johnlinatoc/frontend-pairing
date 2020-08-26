@@ -44,8 +44,6 @@ const App = () => {
     // eslint-disable-next-line
   }, []);
 
-  console.log("users", users)
-  console.log("sprints = ", sprints)
   return (
     <div className="App">
       <h1 className={styles.title}>Pairing Schedule</h1>

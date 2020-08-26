@@ -16,9 +16,9 @@ const mockUsers = [
 ]
 
 const mockSprints = {
-    "sprint 1": [["John, Paul"], ["Marcus"]],
-    "sprint 2": [["Paul, Marcus"], ["John"]],
-    "sprint 3": [["John, Marcus"], ["Marcus"]]
+    "sprint 1": [["John", "Paul"], ["Marcus"]],
+    "sprint 2": [["Paul", "Marcus"], ["John"]],
+    "sprint 3": [["John", "Marcus"], ["Marcus"]]
 }
 
 describe('The ScheduleInfo component', ()=> {
@@ -32,12 +32,12 @@ describe('The ScheduleInfo component', ()=> {
         expect(getByText('3 sprints')).toBeInTheDOM();
     })
 
-    xit('should display all names of developers passed in', async () => {
+    it('should display all names of developers passed in', async () => {
         const {getByText} = renderComponent();
         
-        expect(getByText('John')).toBeInTheDOM();
-        expect(getByText('Paul')).toBeInTheDOM();
-        expect(getByText('Marcus')).toBeInTheDOM();
+        expect(getByText("1. John")).toBeInTheDOM();
+        expect(getByText("2. Paul")).toBeInTheDOM();
+        expect(getByText("3. Marcus")).toBeInTheDOM();
     })
 })
 
